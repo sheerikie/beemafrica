@@ -7,11 +7,8 @@ const where = require("lodash.where");
 
 
 
-const search1 = (query, res) => {
+const search = (query, res) => {
     // console.log(query)
-    main(query, res);
-}
-const search2 = (query, res) => {
     main(query, res);
 }
 
@@ -84,18 +81,8 @@ app.get('/search1', (request, response) => {
     const searchQuery = request.query;
 
     if (searchQuery != null) {
-        search1(searchQuery, response)
+        search(searchQuery, response)
 
-    } else {
-        response.end();
-    }
-});
-app.get('/search2', (request, response) => {
-
-    const searchQuery = request.query.q;
-
-    if (searchQuery != null) {
-        search2(searchQuery, response)
     } else {
         response.end();
     }
